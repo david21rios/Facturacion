@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Usuario } from './usuario';
 import { RolesComponent } from '../roles/roles.component';
-import { USUARIOS } from './usuarios.json';
+import { UsuariosService } from '../services/usuarios.service';
 
 @Component({
   selector: 'app-usuarios',
@@ -15,10 +15,10 @@ export class UsuariosComponent {
   
   usuarios: Usuario[] = []; 
 
-  constructor() { }
+  constructor(private usuariosService: UsuariosService) { }
 
   ngOnInit (): void {
-    this.usuarios = USUARIOS;
+    this.usuarios = this.usuariosService.getUsuarios();
   }
 
   editarUsuario(usuario: Usuario) {
