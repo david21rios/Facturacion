@@ -1,0 +1,22 @@
+<div class="card border-primary mb-3" style="max-width: 100%;">
+    <div class="card-header">Roles</div>
+    <div class="card-body text-primary">
+        <h5 class="card-title">Listado de roles</h5>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nombre del Rol</th>
+                    <th scope="col">Descripcion</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let role of roles">
+                    <th scope="row">{{role.id}}</th>
+                    <td>{{role.roleName}}</td>
+                    <td>{{role.descripcion}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+<div class="card border-primary mb-3" style="max-width: 100%;">
+    <div class="card-header">Usuarios</div>
+    <div class="card-body text-primary">
+        <h5 class="card-title">Listado de usuarios</h5>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Id:</th>
+                    <th scope="col">UserName</th>
+                    <th scope="col">Password</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Photo</th>
+                    <th scope="col">Create_at</th>
+                    <th scope="col">Enabled</th>
+                    <th scope="col">roles</th>
+                    <th scope="col">Editar</th>
+                    <th scope="col">Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let usuario of usuarios">
+                    <th scope="row">{{usuario.id}}</th>
+                    <td>{{usuario.username}}</td>
+                    <td>{{usuario.password}}</td>
+                    <td>{{usuario.email}}</td>
+                    <td>{{usuario.name}}</td>
+                    <td>{{usuario.phone}}</td>
+                    <td>{{usuario.photo}}</td>
+                    <td>{{usuario.create_at}}</td>
+                    <td>{{usuario.enabled}}</td>
+                    <td>{{usuario.roles}}</td>
+                    <td><button class="btn btn-primary" (click)="editarUsuario(usuario)"><i class="fas fa-pencil-alt"></i></button></td>
+                    <td><button class="btn btn-danger" (click)="eliminarUsuario(usuario)"><i class="fas fa-trash"></i></button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
